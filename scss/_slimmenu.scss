@@ -1,0 +1,179 @@
+.menu-collapser {
+  display: none!important;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 0 8px;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 48px;
+  background-color: #999;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.collapse-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 40px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  background-color: #0E0E0E;
+  border-radius: 2px;
+  cursor: pointer;
+
+  transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    color: #FFF;
+    background-color: #040404;
+  }
+
+  .icon-bar {
+    display: block;
+    height: 2px;
+    width: 18px;
+    margin: 2px 0;
+    background-color: #F5F5F5;
+    border-radius: 1px;
+  }
+}
+
+ul.slimmenu {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  &.collapsed {
+    li {
+      display: block;
+      width: 100%;
+
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+
+      > ul {
+        position: static;
+        display: none;
+      }
+
+      a { /*display: block;*/}
+
+      .sub-toggle {
+        /*width: 100%;*/ height: 100%;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    ul {
+      margin: 0;
+      list-style-type: none;
+    }
+
+    > ul {
+      /*display: block!important;*/ display: none; position: absolute; left: 0; top: 5.9375rem; width: 19.6875rem;padding:0px!important; background: #ffffff; z-index: 999;
+
+      > li {
+        display: block!important; font-weight: 500; overflow: hidden;
+        ul {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          z-index: 999;
+          display: none;
+          width: 100%;
+        }
+        a{ 
+          display: block; color: $color_gray; padding: 1.3rem 2.3rem; background: #eeeeee; border-bottom: $color_white 2px solid; 
+          &:before,&::after{ opacity: 0;}
+          &:before{ content: ''; @include alignVerticalCenter(); left: 0; top: 49%; width: 5px; height: 95%; background: $color_green;}
+          &::after{ content: ''; @include alignVerticalCenter(); left: -4px; top: 37%; width: 14px; height: 14px; background: $color_green; transform: rotate(135deg);}
+          &:hover{ 
+            color: $color_white; background: #a5a5a5;
+            &:before,&::after{ opacity: 1;}
+          }
+        }
+        img{ width: 133px; margin: 0 auto;}
+        span{ display: block; padding: 25px 0px 20px;}
+      }
+    }
+
+    .prod_sub_nav{
+      width: 600px; padding: 55px 30px;
+      li{
+        display: inline-block; width: 50%; text-align: center; border: none!important;
+      }
+    }
+
+    /*a {
+      display: block;
+      padding: 12px 64px 12px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      transition: background-color 0.5s ease-out;
+      -o-transition: background-color 0.5s ease-out;
+      -moz-transition: background-color 0.5s ease-out;
+      -webkit-transition: background-color 0.5s ease-out;
+
+      &:hover {
+        text-decoration: none;
+        background-color: #999;
+      }
+    }*/
+
+    .sub-toggle {
+      display: block; @include alignVerticalCenter(); right: 12px; top: 50%; z-index: 999; width: 12px; height: 8px; text-align: center; background: url(/assets/images/nav-toggle-arrow.png) no-repeat center center; background-size: cover; cursor: pointer;
+
+      &:before {
+        content: '';
+        display: block; @include alignHorizontalCenter(); top: 25px; left: 50%;
+        width: 9px; height: 9px; /*background: url(../images/nav-plus.png) no-repeat center center;*/
+        margin-right: -0.25em;
+      }
+
+      > i {
+        display: none;
+        color: #333;
+        font-size: 18px;
+        vertical-align: middle;
+      }
+    }
+    .sub-toggle.expanded{
+      &:before { /*background: url(../images/nav-minus.png) no-repeat center center;*/}
+    }
+  }
+
+  > li {
+    &:first-child,
+    &.has-submenu + li {
+      border-left: 0;
+    }
+  }
+}

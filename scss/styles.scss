@@ -1,8 +1,108 @@
-body {
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', sans-serif;
-  padding: 20px 20px 60px;
-  max-width: 300px;
-  margin: 0 auto;
-  .description{color:red;}
+
+@font-face {
+    font-family:'DINPro';
+    src: url('/static/assets/fonts/DINPro.eot');
+    src: url('/static/assets/fonts/DINPro.eot') format('embedded-opentype'),
+         url('/static/assets/fonts/DINPro.woff2') format('woff2'),
+         url('/static/assets/fonts/DINPro.woff') format('woff'),
+         url('/static/assets/fonts/DINPro.ttf') format('truetype'),
+         url('/static/assets/fonts/DINPro.svg#DINPro') format('svg');
 }
+@font-face {
+    font-family:'DINProMedium';
+    src: url('/static/assets/fonts/DINProMedium.eot');
+    src: url('/static/assets/fonts/DINProMedium.eot') format('embedded-opentype'),
+         url('/static/assets/fonts/DINProMedium.woff2') format('woff2'),
+         url('/static/assets/fonts/DINProMedium.woff') format('woff'),
+         url('/static/assets/fonts/DINProMedium.ttf') format('truetype'),
+         url('/static/assets/fonts/DINProMedium.svg#DINProMedium') format('svg');
+}
+@font-face {
+    font-family:'DINProBold';
+    src: url('/static/assets/fonts/DINProBold.eot');
+    src: url('/static/assets/fonts/DINProBold.eot') format('embedded-opentype'),
+         url('/static/assets/fonts/DINProBold.woff2') format('woff2'),
+         url('/static/assets/fonts/DINProBold.woff') format('woff'),
+         url('/static/assets/fonts/DINProBold.ttf') format('truetype'),
+         url('/static/assets/fonts/DINProBold.svg#DINProBold') format('svg');
+}
+@font-face {
+    font-family:'DINProBlack';
+    src: url('/static/assets/fonts/DINProBlack.eot');
+    src: url('/static/assets/fonts/DINProBlack.eot') format('embedded-opentype'),
+         url('/static/assets/fonts/DINProBlack.woff2') format('woff2'),
+         url('/static/assets/fonts/DINProBlack.woff') format('woff'),
+         url('/static/assets/fonts/DINProBlack.ttf') format('truetype'),
+         url('/static/assets/fonts/DINProBlack.svg#DINProBlack') format('svg');
+}
+$font_DINPro: 'DINPro', Arial, Helvetica, sans-serif;
+$font_DINPro_Medium: 'DINProMedium', Arial, Helvetica, sans-serif;
+$font_DINPro_Bold: 'DINProBold', Arial, Helvetica, sans-serif;
+$font_DINPro_Black: 'DINProBlack', Arial, Helvetica, sans-serif;
+
+$color_white:#ffffff;
+$color_black:#000000;
+$color_gray:#5d5d5d;
+$color_light_gray:#a2a2a2;
+$color_green:#067262;
+$color_yellow:#fcb717;
+
+@import 'base.scss';
+@import 'font-awesome.scss';
+html{ font-size: 16px;}
+body{ font-family: $font_DINPro; color: $color_gray;}
+h1, h2, h3{ font-family: $font_DINPro_Black; text-align: center;}
+
+.slickParent h3{text-align: center;}
+
+#wrapper{ width: 100%;}
+header{
+    position: relative; display: flex; flex-direction: row; flex-wrap: nowrap; width: 100%; background: $color_white; padding: 0 6.5625rem 0 2.5rem;
+    & > div{ align-self: center;}
+    .logo{ width: 100%; max-width: 17rem; }
+    .nav{
+        font-size: 0; padding: 0 1.25rem 0 3.125rem;
+        ul.slimmenu > li{ 
+            display: inline-block; font-size: 0.9rem; font-weight: 500;
+            & > a{ 
+                position: relative; display: block; color: $color_gray; padding: 0.5rem 0.5rem 0.5rem 0.5rem; transition-duration: .5s; border: thin solid #e5e5e5;
+                &::before{ content: ''; position: absolute; left: 0; top: -0.375rem; width: 100%; height: 0.375rem; background: transparent; transition-duration: .3s;}
+                &:hover{
+                    color: $color_green; background: #eeeeee;
+                    &::before{ top:0; background: $color_yellow;}
+                }
+            }
+            a.active{
+                color: $color_green; background: #eeeeee;
+                &::before{ top:0; background: $color_yellow;}
+            }
+            /*&:hover{
+                & > a{ 
+                    
+                }
+            }*/
+        }
+        /*ul.slimmenu > li.active{
+            a{color: $color_green; background: #eeeeee;
+                &::before{ top:0; background: $color_yellow;}
+            }
+        }*/
+    }
+    .socialCon{ 
+        font-size: 0;
+        a{ 
+            display: inline-block; font-size: 1.125rem; color: $color_light_gray; margin: 0 0.625rem; 
+            &:hover{ color: $color_yellow;}
+        }
+    }
+    .search_btn{ 
+        position: absolute; right: 0; top: 0; width: 6.5625rem; height: 100%; background: #eeeeee; cursor: pointer; transition-duration: .3s;
+        .search_icon{ @include alignVerHorCenter(); left: 50%; top: 50%;}
+        &:hover{
+            background: $color_light_gray;
+            .search_icon{ color: $color_white;}
+        }
+    }
+}
+
+@import 'slimmenu.scss';

@@ -24,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# .env.local   //-- shuld not commented in your project
+# .env.development.local   //-- shuld not commented in your project
+# .env.test.local   //-- shuld not commented in your project
+# .env.production.local   //-- shuld not commented in your project

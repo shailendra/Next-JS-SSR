@@ -1,0 +1,23 @@
+{
+   "userId": 1,
+   "id": 1,
+   "title": "100 Digital is beyond information. It is a customizable asset for every business need under the sun. This asset needs to be fast, smart, and reliable. As a top digital marketing agency in India, we help organizations manage this overwhelming magnitude of information and transition into effective digital businesses.",
+   "name":"Shailendra More",
+   "company":"BC Web Wise",
+   "disc":"We are a full-service digital marketing agency renowned for our strategic brand services, world-class creative work, and in-depth consumer research. We devise strategies to bring brands closer to consumers on digital, tell stories that captivate the millennial mindset, and acquire the sharpest combination of digital media assets to meet campaign objectives.",
+   "slick":[
+     {"country":"India"},
+     {"country":"Nepal"},
+     {"country":"Japan"},
+     {"country":"America"},
+     {"country":"France"},
+     {"country":"Canada"}
+   ],
+   "paths":[
+     {"id":"10"},
+     {"id":"20"},
+     {"id":"30"},
+     {"id":"40"},
+     {"id":"50"}
+   ]
+ }
