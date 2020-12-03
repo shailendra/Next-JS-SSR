@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 
 /* All defined configs are on below link
 https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts
@@ -13,12 +12,23 @@ module.exports = {
    basePath: '',
    //basePath: '/store',
 
+
+   /* Setting a custom build directory */
+   distDir: '_next',
+
+   
    env: {
       /* avoid to write env variable here. Use file env.local, .env.development, env.production.
       check /environment-variables page for detail
       */
       customKey: 'my-value',
    },
+
+
+   /* Next.js provides gzip compression to compress rendered content and static files. Compression only works with the server target. In general you will want to enable compression on a HTTP proxy like nginx, to offload load from the Node.js process.
+   To disable compression, open next.config.js and disable the compress config */
+   /* compress: false, */
+
 
    
    async rewrites() {

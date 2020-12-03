@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
           <div id="wrapper">
              <Head>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="robots" content="index, follow" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
                 {/* <meta name="language" content="English" /> */}
